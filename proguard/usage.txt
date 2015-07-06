@@ -1,0 +1,269 @@
+fm.jihua.weixinexplorer.App:
+    private static final java.lang.String IMAGE_CACHE_DIR
+    private static final int DEFAULT_MEM_CACHE_SIZE
+    69:69:public int getActivityCount()
+    73:76:public android.app.Activity getTopActivity()
+    106:106:public java.util.List getWeixinIdOldList()
+    131:131:public android.support.v4.util.LruCache getMemCache()
+fm.jihua.weixinexplorer.BuildConfig
+fm.jihua.weixinexplorer.R:
+    10:10:public R()
+fm.jihua.weixinexplorer.cache.AsyncTask:
+    private static final java.lang.String LOG_TAG
+    private static final int CORE_POOL_SIZE
+    private static final int MAXIMUM_POOL_SIZE
+    private static final int KEEP_ALIVE
+    private static final int MESSAGE_POST_RESULT
+    private static final int MESSAGE_POST_PROGRESS
+    295:296:public static void init()
+    300:301:public static void setDefaultExecutor(java.util.concurrent.Executor)
+    355:355:public final fm.jihua.weixinexplorer.cache.AsyncTask$Status getStatus()
+    508:508:public final java.lang.Object get()
+    528:528:public final java.lang.Object get(long,java.util.concurrent.TimeUnit)
+    560:560:public final varargs fm.jihua.weixinexplorer.cache.AsyncTask execute(java.lang.Object[])
+    629:630:public static void execute(java.lang.Runnable)
+    647:651:protected final varargs void publishProgress(java.lang.Object[])
+fm.jihua.weixinexplorer.cache.BuildConfig
+fm.jihua.weixinexplorer.cache.DiskLruCache:
+    static final java.lang.String JOURNAL_FILE
+    static final java.lang.String JOURNAL_FILE_TMP
+    static final java.lang.String MAGIC
+    static final java.lang.String VERSION_1
+    static final long ANY_SEQUENCE_NUMBER
+    private static final java.lang.String CLEAN
+    private static final java.lang.String DIRTY
+    private static final java.lang.String REMOVE
+    private static final java.lang.String READ
+    private static final int IO_BUFFER_SIZE
+    196:205:public static java.lang.String readFully(java.io.Reader)
+    545:545:public java.io.File getDirectory()
+    553:553:public long maxSize()
+    562:562:public synchronized long size()
+    676:679:public synchronized void flush()
+    724:724:private static java.lang.String inputStreamToString(java.io.InputStream)
+    517:517:static synthetic fm.jihua.weixinexplorer.cache.DiskLruCache$Editor access$5(fm.jihua.weixinexplorer.cache.DiskLruCache,java.lang.String,long)
+    723:723:static synthetic java.lang.String access$6(java.io.InputStream)
+    111:111:static synthetic java.nio.charset.Charset access$7()
+fm.jihua.weixinexplorer.cache.DiskLruCache$Editor:
+    787:787:public java.io.InputStream newInputStream(int)
+    803:804:public java.lang.String getString(int)
+    827:834:public void set(int,java.lang.String)
+fm.jihua.weixinexplorer.cache.DiskLruCache$Snapshot:
+    747:747:public fm.jihua.weixinexplorer.cache.DiskLruCache$Editor edit()
+    761:761:public java.lang.String getString(int)
+fm.jihua.weixinexplorer.cache.ImageCache:
+    private static final java.lang.String TAG
+    private static final int DEFAULT_MEM_CACHE_SIZE
+    private static final int DEFAULT_DISK_CACHE_SIZE
+    private static final int DEFAULT_COMPRESS_QUALITY
+    private static final int DISK_CACHE_INDEX
+    private static final boolean DEFAULT_MEM_CACHE_ENABLED
+    private static final boolean DEFAULT_DISK_CACHE_ENABLED
+    private static final boolean DEFAULT_CLEAR_DISK_CACHE_ON_START
+    private static final boolean DEFAULT_INIT_DISK_CACHE_ON_CREATE
+    private static final int MESSAGE_CLEAR
+    private static final int MESSAGE_INIT_DISK_CACHE
+    private static final int MESSAGE_FLUSH
+    private static final int MESSAGE_CLOSE
+    90:92:public ImageCache(android.content.Context,java.lang.String)
+    106:117:public static fm.jihua.weixinexplorer.cache.ImageCache findOrCreateCache(android.support.v4.app.FragmentManager,fm.jihua.weixinexplorer.cache.ImageCache$ImageCacheParams)
+    320:342:public void clearCache()
+    349:361:public void flush()
+    368:383:public void close()
+    555:563:public static fm.jihua.weixinexplorer.cache.ImageCache$RetainFragment findOrCreateRetainFragment(android.support.v4.app.FragmentManager)
+fm.jihua.weixinexplorer.cache.ImageCache$ImageCacheParams:
+    403:405:public ImageCache$ImageCacheParams(java.io.File)
+fm.jihua.weixinexplorer.cache.ImageCache$RetainFragment
+fm.jihua.weixinexplorer.cache.ImageFetcher:
+    private static final java.lang.String TAG
+    private static final int HTTP_CACHE_SIZE
+    private static final java.lang.String HTTP_CACHE_DIR
+    private static final int IO_BUFFER_SIZE
+    private static final int DISK_CACHE_INDEX
+    61:63:public ImageFetcher(android.content.Context,int,int)
+    113:129:protected void clearCacheInternal()
+    133:146:protected void flushCacheInternal()
+    150:166:protected void closeCacheInternal()
+fm.jihua.weixinexplorer.cache.ImageResizer:
+    private static final java.lang.String TAG
+    45:47:public ImageResizer(android.content.Context,int,int)
+    138:147:public static android.graphics.Bitmap decodeSampledBitmapFromFile(java.lang.String,int,int)
+fm.jihua.weixinexplorer.cache.ImageWorker:
+    private static final java.lang.String TAG
+    private static final int FADE_IN_TIME
+    private fm.jihua.weixinexplorer.cache.ImageCache$ImageCacheParams mImageCacheParams
+    private static final int MESSAGE_CLEAR
+    private static final int MESSAGE_INIT_DISK_CACHE
+    private static final int MESSAGE_FLUSH
+    private static final int MESSAGE_CLOSE
+    124:124:public android.graphics.Bitmap getLoadingImage()
+    144:147:public void addImageCache(android.support.v4.app.FragmentManager,fm.jihua.weixinexplorer.cache.ImageCache$ImageCacheParams)
+    176:177:public void setExitTasksEarly(boolean)
+    195:203:public static void cancelWork(android.widget.ImageView)
+    408:414:public void setPauseWork(boolean)
+    445:448:protected void clearCacheInternal()
+    451:454:protected void flushCacheInternal()
+    457:461:protected void closeCacheInternal()
+    464:465:public void clearCache()
+    468:469:public void flushCache()
+    472:473:public void closeCache()
+fm.jihua.weixinexplorer.cache.ImageWorker$CacheAsyncTask
+fm.jihua.weixinexplorer.cache.Utils:
+    26:26:private Utils()
+    47:47:public static boolean hasJellyBean()
+fm.jihua.weixinexplorer.data.providers.AddAccountsProvider:
+    42:43:public void getAccounts(java.lang.Object)
+fm.jihua.weixinexplorer.rest.contract.DataProvider:
+    public abstract fm.jihua.weixinexplorer.rest.entities.AccountsResult getCategory(int)
+fm.jihua.weixinexplorer.rest.service.DataAdapter:
+    public static final int MESSAGE_GET_ACCOUNTS
+    public static final int MESSAGE_GET_NEW_CHOICENESSES
+    public static final int MESSAGE_GET_CHOICENESSES
+    public static final int MESSAGE_GET_CHOICENESS
+    public static final int MESSAGE_GET_CATEGORYS
+    public static final int MESSAGE_GET_CATEGORY
+    public static final int MESSAGE_ADD_ATTENT
+    61:68:public void getCategory(int)
+fm.jihua.weixinexplorer.rest.service.DataAdapter$3
+fm.jihua.weixinexplorer.rest.service.DataService:
+    6:6:public DataService()
+fm.jihua.weixinexplorer.rest.service.RestService:
+    68:69:public fm.jihua.weixinexplorer.rest.entities.AccountsResult getCategory(int)
+fm.jihua.weixinexplorer.ui.activity.BaseActivity:
+    public static final int DIALOG_FOR_BLOCK
+    40:44:public void startActivity(android.app.Activity,java.lang.Class)
+fm.jihua.weixinexplorer.ui.activity.MainTabActivity:
+    private static final java.lang.String TAG
+fm.jihua.weixinexplorer.ui.activity.RankingsActivity:
+    android.widget.ListView accountListView
+fm.jihua.weixinexplorer.ui.helper.DialogUtils:
+    8:8:public DialogUtils()
+fm.jihua.weixinexplorer.ui.helper.Hint:
+    6:6:public Hint()
+    19:20:public static void showTipsLong(android.content.Context,java.lang.String)
+fm.jihua.weixinexplorer.ui.helper.UIUtil:
+    private static final java.lang.String TAG
+    15:15:public UIUtil()
+fm.jihua.weixinexplorer.ui.widget.AnimTabHost:
+    private static final java.lang.String TAG
+    39:39:public int getTabCount()
+fm.jihua.weixinexplorer.ui.widget.ScrollLayout:
+    private static final java.lang.String TAG
+    private static final int TOUCH_STATE_REST
+    private static final int TOUCH_STATE_SCROLLING
+    private static final int SNAP_VELOCITY
+    private long mLastScroll
+    private static final int ANIMATED_SCROLL_GAP
+    boolean firstScrooled
+    68:68:public boolean isScrolling()
+    72:75:public void stopScroll()
+    96:97:public void setOnScrollEventListener(fm.jihua.weixinexplorer.ui.widget.ScrollLayout$OnScrollEventListener)
+    104:105:public void disableTouch()
+    151:152:public void setCycling(boolean)
+    357:373:public void setToScreen(int)
+    376:376:public int getCurScreen()
+    381:395:public final void smoothScrollBy(int,int)
+fm.jihua.weixinexplorer.utils.AndroidSystem:
+    11:11:public AndroidSystem()
+fm.jihua.weixinexplorer.utils.Compatibility:
+    5:5:public Compatibility()
+fm.jihua.weixinexplorer.utils.Const:
+    public static final java.lang.String TAG
+    public static final java.lang.String REST_HOST
+    public static final java.lang.String LOCAL_SERVER_HOST
+    public static final int DATA_COUNT_PER_REQUEST
+    public static final int All_ACCOUNTS
+    public static final int CATEGORY_ACCOUNTS
+    public static final int CHOICENESS_ACCOUNTS
+    public static final int TIMEOUT_CONNECTION
+    public static final int TIMEOUT_SOCKET
+    public static final java.lang.String ACCOUNTS_FROM
+    public static final java.lang.String DATABASE_ACCOUNT_FILE
+    public static final java.lang.String DATABASE_TABLE_ACCOUNTS_OLD
+    9:9:public Const()
+fm.jihua.weixinexplorer.utils.DatabaseHelper:
+    private static final java.lang.String DATABASE_NAME
+    private static final int DATABASE_VERSION
+    59:60:public void cleanData(android.database.sqlite.SQLiteDatabase)
+    63:74:public void execSQL(android.database.sqlite.SQLiteDatabase,java.lang.String)
+    77:88:public void execSQL(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object[])
+    91:100:public boolean existWeixinId(android.database.sqlite.SQLiteDatabase,java.lang.String)
+fm.jihua.weixinexplorer.utils.HttpUtil:
+    26:26:public HttpUtil()
+fm.jihua.weixinexplorer.utils.ImageHlp:
+    private static synthetic int[] $SWITCH_TABLE$android$graphics$Bitmap$Config
+    98:115:private static android.graphics.Bitmap getShadowBitmap(android.graphics.Bitmap,int,int)
+    128:140:public static android.graphics.Bitmap toGrayscale(android.graphics.Bitmap)
+    150:213:public static android.graphics.Bitmap blurImageAmeliorate(android.graphics.Bitmap)
+    219:263:public static android.graphics.Bitmap setBlur(android.graphics.Bitmap,int)
+    268:268:public static android.graphics.Bitmap getRoundedCornerAndShadowBitmap(android.graphics.Bitmap)
+    273:274:public static android.graphics.Bitmap getRoundedCornerBitmap(android.graphics.Bitmap)
+    279:280:public static android.graphics.Bitmap getRoundedCornerBitmap(android.graphics.Bitmap,boolean)
+    284:287:public static android.graphics.Bitmap getRoundedCornerAndShadowBitmap(android.graphics.Bitmap,boolean)
+    291:302:public static android.graphics.Bitmap decodeStream(java.io.InputStream)
+    306:316:public static android.graphics.Bitmap decodeURIStream(android.content.ContentResolver,android.net.Uri)
+    340:350:public static android.graphics.Bitmap decodeFile(java.lang.String)
+    355:371:public static android.graphics.Bitmap decodeFile(java.lang.String,int,int)
+    375:385:public static android.graphics.Bitmap decodeResource(android.content.res.Resources,int)
+    389:405:public static android.graphics.Bitmap decodeResource(android.content.res.Resources,int,int,int)
+    409:417:public static android.graphics.drawable.BitmapDrawable createFromPath(android.content.res.Resources,java.lang.String)
+    421:423:public static android.graphics.Bitmap getFace(android.content.res.Resources,int)
+    428:428:public static android.graphics.drawable.Drawable drawable_from_url(java.lang.String,java.lang.String)
+    441:441:public static android.graphics.Bitmap drawableToBitmap(android.graphics.drawable.Drawable)
+    446:460:public static int computeSampleSize(android.graphics.BitmapFactory$Options,int,int)
+    465:480:private static int computeInitialSampleSize(android.graphics.BitmapFactory$Options,int,int)
+    491:493:public static int changeToSystemUnitFromPX(android.content.Context,int)
+    497:500:public static android.graphics.Bitmap snap(android.view.View)
+    506:515:public static void saveBitmap(android.graphics.Bitmap,java.lang.String)
+    524:540:public static int getBytesSize(android.graphics.Bitmap)
+    550:554:public static int getBytesSize(java.lang.String)
+    558:566:public static byte[] getBitmapByte(android.graphics.Bitmap)
+    34:34:static synthetic int[] $SWITCH_TABLE$android$graphics$Bitmap$Config()
+fm.jihua.weixinexplorer.utils.ObjectUtils:
+    private static final int INITIAL_HASH
+    private static final int MULTIPLIER
+    private static final java.lang.String EMPTY_STRING
+    private static final java.lang.String NULL_STRING
+    private static final java.lang.String ARRAY_START
+    private static final java.lang.String ARRAY_END
+    private static final java.lang.String EMPTY_ARRAY
+    private static final java.lang.String ARRAY_ELEMENT_SEPARATOR
+    24:24:public ObjectUtils()
+    47:47:public static boolean isCheckedException(java.lang.Throwable)
+    58:70:public static boolean isCompatibleWithThrowsClause(java.lang.Throwable,java.lang.Class[])
+    79:79:public static boolean isArray(java.lang.Object)
+    88:88:public static boolean isEmpty(java.lang.Object[])
+    111:119:public static boolean containsElement(java.util.List,java.lang.Object)
+    130:130:public static boolean containsConstant(java.lang.Enum[],java.lang.String)
+    141:148:public static boolean containsConstant(java.lang.Enum[],java.lang.String,boolean)
+    160:165:public static java.lang.Enum caseInsensitiveValueOf(java.lang.Enum[],java.lang.String)
+    178:192:public static java.lang.Object[] addObjectToArray(java.lang.Object[],java.lang.Object)
+    205:223:public static java.lang.Object[] toObjectArray(java.lang.Object)
+    301:333:public static int nullSafeHashCode(java.lang.Object)
+    341:349:public static int nullSafeHashCode(java.lang.Object[])
+    357:365:public static int nullSafeHashCode(boolean[])
+    373:381:public static int nullSafeHashCode(byte[])
+    389:397:public static int nullSafeHashCode(char[])
+    405:413:public static int nullSafeHashCode(double[])
+    421:429:public static int nullSafeHashCode(float[])
+    437:445:public static int nullSafeHashCode(int[])
+    453:461:public static int nullSafeHashCode(long[])
+    469:477:public static int nullSafeHashCode(short[])
+    485:485:public static int hashCode(boolean)
+    493:494:public static int hashCode(double)
+    502:502:public static int hashCode(float)
+    510:510:public static int hashCode(long)
+    525:528:public static java.lang.String identityToString(java.lang.Object)
+    537:537:public static java.lang.String getIdentityHexString(java.lang.Object)
+    550:553:public static java.lang.String getDisplayString(java.lang.Object)
+    563:563:public static java.lang.String nullSafeClassName(java.lang.Object)
+    574:608:public static java.lang.String nullSafeToString(java.lang.Object)
+    621:639:public static java.lang.String nullSafeToString(java.lang.Object[])
+    652:671:public static java.lang.String nullSafeToString(boolean[])
+    684:702:public static java.lang.String nullSafeToString(byte[])
+    715:733:public static java.lang.String nullSafeToString(char[])
+    746:765:public static java.lang.String nullSafeToString(double[])
+    778:797:public static java.lang.String nullSafeToString(float[])
+    810:828:public static java.lang.String nullSafeToString(int[])
+    841:859:public static java.lang.String nullSafeToString(long[])
+    872:890:public static java.lang.String nullSafeToString(short[])

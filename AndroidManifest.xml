@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="fm.jihua.weixinexplorer"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="7"
+        android:targetSdkVersion="17" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    
+    <!--以下为必须的权限 -->
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+    <!--以下为可选的权限 --> <!--该权限实现拨打电话功能，不需要此功能的开发者可以不添加该权限-->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <!--该权限实现发注册短信功能，不需要获取用户短信号码的开发者可以不添加该权限-->
+    <!-- <uses-permission android:name="android.permission.SEND_SMS" /> -->
+    <!--该权限实现读/写短/彩信箱功能，不需要此功能的开发者可以不添加该权限，这两项权限不能只配置其中一项，需要一起配置-->
+    <!-- <uses-permission android:name="android.permission.WRITE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" /> -->
+
+    <application
+        android:name="fm.jihua.weixinexplorer.App"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".ui.activity.MainTabActivity"
+            android:label="@string/app_name"
+            android:theme="@style/MTheme"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.activity.SplashActivity" />
+        <activity android:name=".ui.activity.MainActivity" />
+        <activity android:name=".ui.activity.MoreActivity" />
+        <activity android:name=".ui.activity.RankingsActivity" />
+        <activity android:name=".ui.activity.ChoicenessActivity" />
+        <activity android:name=".ui.activity.CategoryActivity" />
+        <activity
+            android:name=".ui.activity.AccountsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/XTheme" />
+        <activity
+            android:name="fm.jihua.weixinexplorer.ui.activity.ProfileActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/XTheme" />
+        
+        <!-- 友盟反馈	 -->
+        <activity
+            android:name="com.umeng.fb.ui.SendFeedback"
+            android:windowSoftInputMode="adjustResize" />
+        <activity android:name="com.umeng.fb.ui.FeedbackConversations" />
+        <activity
+            android:name="com.umeng.fb.ui.FeedbackConversation"
+            android:configChanges="keyboard" />
+        
+        <!-- 友盟应用联盟 -->
+        <service
+            android:name="com.umeng.common.net.DownloadingService"
+            android:exported="true"
+            android:process=":DownloadingService" >
+        </service>
+       
+        <!-- 个推SDK配置开始 -->		
+		<activity 
+		    android:name="com.igexin.sdk.GexinSdkActivity"
+		    android:theme="@android:style/Theme.Translucent.NoTitleBar"
+		    android:taskAffinity="android.task.GexinSdkActivityTask"
+			android:excludeFromRecents="true"
+			android:process="fm.jihua.weixinexplorer.pushservice">
+		    <intent-filter>
+				<action android:name="com.igexin.action.popupact.fm.jihua.weixinexplorer" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+        </activity>
+		<service android:label="NotificationCenterAIDL"
+				 android:name="com.igexin.sdk.aidl.GexinMsgService"   
+				 android:process="fm.jihua.weixinexplorer.pushservice">
+				 <intent-filter>
+				     <action android:name="com.igexin.sdk.aidl.action.fm.jihua.weixinexplorer" />
+				 </intent-filter>
+		</service>
+		<service android:label="NotificationCenter"
+				 android:name="com.igexin.sdk.GexinMainService"
+				 android:process="fm.jihua.weixinexplorer.pushservice">
+				 <intent-filter>
+					 <action android:name="com.igexin.sdk.action.fm.jihua.weixinexplorer" />
+				 </intent-filter>
+		</service>
+		<receiver android:name="com.igexin.sdk.GexinSdkReceiver">
+				  <intent-filter>
+					  <action android:name="android.intent.action.BOOT_COMPLETED" />
+					  <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+					  <action android:name="android.intent.action.USER_PRESENT" />
+				  </intent-filter>
+		</receiver>
+		
+		<!-- ================================下载器模块================================= -->
+		<service android:name="sdk.download.DownloadService" 
+				 android:process="fm.jihua.weixinexplorer.pushservice" />
+		<receiver android:exported="false" android:name="sdk.download.DownloadReceiver">
+				  <intent-filter>
+					  <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+				  </intent-filter>
+		</receiver>
+		<provider android:authorities="sdk.download.fm.jihua.weixinexplorer"
+				  android:process="fm.jihua.weixinexplorer.pushservice"
+				  android:name="sdk.download.DownloadProvider"/>
+		
+		<!-- 配置的第三方参数属性 -->
+		<!-- 个信 -->
+		<meta-data android:name="appid" android:value="BnYcxF6A6X8I21ARZmunz4" />
+		<meta-data android:name="appkey" android:value="TtEWyIJXUX577k76AuGo36" />
+		<meta-data android:name="appsecret" android:value="6rEJvnKeUX9fKBb8SCt139" />
+		<!-- 友盟 -->
+		<meta-data android:value="514684f556240b4c1c00c657" android:name="UMENG_APPKEY"></meta-data>
+		<!--Web hiapk appchina anzhi google tencent gfan mumayi nduoa 360 91 eoe babe 163 umengxp oppo wandoujia wo sanxing baidu mm sina xiaomi tianyi dangle 3g-->
+        <meta-data android:value="Web" android:name="UMENG_CHANNEL"/> 
+						
+    </application>
+
+</manifest>

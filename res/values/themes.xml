@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="XTheme" parent="android:Theme">
+        <item name="android:windowTitleSize">44dp</item>
+        <item name="android:windowTitleStyle">@style/XWindowTitle</item>
+        <item name="android:windowTitleBackgroundStyle">@style/StatusBarBackground</item>
+        <item name="android:windowBackground">@null</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+    
+    <style name="MTheme" parent="android:Theme">
+        <item name="android:windowTitleSize">44dp</item>
+        <item name="android:windowTitleStyle">@style/XWindowTitle</item>
+        <item name="android:windowTitleBackgroundStyle">@style/StatusBarBackground</item>
+    </style>
+</resources>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    
+	<color name="white">#FFFFFF</color>
+	<color name="black">#000000</color>
+    <color name="chartreuse">#60d0c6</color>   
+    <color name="ivory">#dce1e0</color>
+	<color name="gray_darker">#333333</color>
+	<color name="gray_dark">#787878</color>
+	<color name="course_divider_bottom">#CDCDCD</color>
+	
+	<color name="content_dark">#4c4c4c</color>
+	<color name="content_light">#787878</color>
+    
+</resources>
